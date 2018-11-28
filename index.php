@@ -4,15 +4,29 @@ $name = 'JAIME YANEZ CORREA';
  [
 'title' => 'PHP DEVELOPER',
 'description' => 'Vamos ahi!!!!!!!',
+'ver' => true
  ],
  [
 'title' => 'PYTHON',
 'description' => 'ahora!!!!!!',
+'ver' => false
  ],
  [
 'title' => 'DEVOPS',
 'description'=> 'hola',
+'ver' => true
  ],
+ [
+'title' => 'FARMACIA',
+'description'=> 'AUXILIAR',
+'ver' => false
+ ],
+ [
+'title' => 'MEDICITY',
+'description'=> 'ADMINISTRADOR',
+'ver' => true
+ ]
+
 ];
 //$VAR1 = 1;
 //if ($VAR1 > 2) {
@@ -71,21 +85,22 @@ $name = 'JAIME YANEZ CORREA';
           <ul>
             <?php
              ;
-              for ( $idx = 0;$idx < count($jobs);$idx = $idx ++){
-                echo '<li class="work-position">';
-              echo '<h5>' . $jobs[$idx]['title'] . '</h5>';
-              echo '<p>' . $jobs[$idx]['description'] . '</p>';
-              echo '<strong>Achievements:</strong>';
-              echo '<ul>';
-                echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
-                echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
-                echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
-             echo '</ul>';
-            echo '</li>';
-                  ;
-                 } 
-                             
-            ?>
+              for ( $idx = 0;$idx < count($jobs);$idx ++){
+                if($jobs[$idx]['ver'] == false){
+                  continue;
+
+                }
+                echo   '<h5>' . $jobs[$idx]['title'] . '</h5>';
+                echo   '<p>' . $jobs[$idx]['description'] . '</p>';
+                echo   '<strong>Achievements:</strong>';
+                echo   '<ul>';
+                echo   '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+                echo   '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+                echo   '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+                echo   '</ul>';
+                echo    '</li>';
+              } 
+              ?>
             
          </ul>
         </div>
