@@ -84,7 +84,7 @@ $name = 'JAIME YANEZ CORREA';
           <h3 class="border-bottom-gray" >Work Experience</h3>
           <ul>
             <?php
-             ;
+             
               for ( $idx = 0;$idx < count($jobs);$idx ++){
                 if($jobs[$idx]['ver'] == false){
                   continue;
