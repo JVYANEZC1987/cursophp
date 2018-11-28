@@ -1,30 +1,36 @@
 <?php  
 $name = 'JAIME YANEZ CORREA';
+$limimonths = 12;
  $jobs = [
  [
 'title' => 'PHP DEVELOPER',
 'description' => 'Vamos ahi!!!!!!!',
-'ver' => true
+'ver' => true,
+'meses' => 6
  ],
  [
 'title' => 'PYTHON',
 'description' => 'ahora!!!!!!',
-'ver' => false
+'ver' => false,
+'meses' => 8
  ],
  [
 'title' => 'DEVOPS',
 'description'=> 'hola',
-'ver' => true
+'ver' => true,
+'meses' => 9
  ],
  [
 'title' => 'FARMACIA',
 'description'=> 'AUXILIAR',
-'ver' => false
+'ver' => false,
+'meses' => 8
  ],
  [
 'title' => 'MEDICITY',
 'description'=> 'ADMINISTRADOR',
-'ver' => true
+'ver' => true,
+'meses' => 1
  ]
 
 ];
@@ -84,14 +90,16 @@ $name = 'JAIME YANEZ CORREA';
           <h3 class="border-bottom-gray" >Work Experience</h3>
           <ul>
             <?php
-             
+             $totalmeses = 0;
               for ( $idx = 0;$idx < count($jobs);$idx ++){
-                if($jobs[$idx]['ver'] == false){
+                $totalmeses += $jobs[$idx]['meses'];
+                if($jobs[$idx]['ver'] != true){
                   continue;
 
                 }
                 echo   '<h5>' . $jobs[$idx]['title'] . '</h5>';
                 echo   '<p>' . $jobs[$idx]['description'] . '</p>';
+                 echo   '<p>' . $totalmeses . '</p>';
                 echo   '<strong>Achievements:</strong>';
                 echo   '<ul>';
                 echo   '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
