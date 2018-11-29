@@ -1,48 +1,65 @@
 <?php  
 $name = 'JAIME YANEZ CORREA';
-$limimonths = 12;
+$limimonths = 2000;
  $jobs = [
  [
 'title' => 'PHP DEVELOPER',
 'description' => 'Vamos ahi!!!!!!!',
 'ver' => true,
-'meses' => 6
+'meses' => 25
  ],
  [
 'title' => 'PYTHON',
 'description' => 'ahora!!!!!!',
-'ver' => false,
-'meses' => 8
+'ver' => true,
+'meses' => 14
  ],
  [
 'title' => 'DEVOPS',
 'description'=> 'hola',
 'ver' => true,
-'meses' => 9
+'meses' => 24
  ],
  [
 'title' => 'FARMACIA',
 'description'=> 'AUXILIAR',
-'ver' => false,
-'meses' => 8
+'ver' => true,
+'meses' => 3
  ],
  [
 'title' => 'MEDICITY',
 'description'=> 'ADMINISTRADOR',
 'ver' => true,
-'meses' => 1
- ]
+'meses' => 101
+ ] 
 
 ];
-//$VAR1 = 1;
-//if ($VAR1 > 2) {
-  //echo 'es mayor que 2';
-  //}else {
-    //echo 'es menor que 2';
-  //}
- ?>
 
+function duracion($meses){
+  $años = floor($meses  / 12);
+   $extrameses = $meses % 12;
+return "$años años $extrameses  meses";
+}
 
+function imprimirjob($job){
+   if($job['ver'] == false){
+                  return;
+                }
+
+  echo   '<h5>' . $job['title'] . '</h5>';
+  echo   '<p>' . $job['description'] . '</p>';
+  echo   '<p>' . duracion($job['meses']) . '</p>';
+  echo   '<strong>Achievements:</strong>';
+  echo   '<ul>';
+  echo   '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+  echo   '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+  echo   '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+  echo   '</ul>';
+  echo    '</li>';
+}
+?>
+
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -98,23 +115,9 @@ $limimonths = 12;
                 if ($totalmeses > $limimonths) {
                                  break;
                                }               
-               
-                if($jobs[$idx]['ver'] != true){
-                  continue;
+                imprimirjob($jobs[$idx]);
                 }
-                 
-                echo   '<h5>' . $jobs[$idx]['title'] . '</h5>';
-                echo   '<p>' . $jobs[$idx]['description'] . '</p>';
-                 echo   '<p>' . $totalmeses . '</p>';
-                echo   '<strong>Achievements:</strong>';
-                echo   '<ul>';
-                echo   '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
-                echo   '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
-                echo   '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
-                echo   '</ul>';
-                echo    '</li>';
-              } 
-              ?>
+                ?>
             
          </ul>
         </div>
