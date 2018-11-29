@@ -92,11 +92,17 @@ $limimonths = 12;
             <?php
              $totalmeses = 0;
               for ( $idx = 0;$idx < count($jobs);$idx ++){
+                //$totalmeses = $totalmeses + $jobs[$idx]['meses'];
                 $totalmeses += $jobs[$idx]['meses'];
+
+                if ($totalmeses > $limimonths) {
+                                 break;
+                               }               
+               
                 if($jobs[$idx]['ver'] != true){
                   continue;
-
                 }
+                 
                 echo   '<h5>' . $jobs[$idx]['title'] . '</h5>';
                 echo   '<p>' . $jobs[$idx]['description'] . '</p>';
                  echo   '<p>' . $totalmeses . '</p>';
