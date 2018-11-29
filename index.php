@@ -1,39 +1,9 @@
 <?php  
+
+include ('jobs.php');
+
 $name = 'JAIME YANEZ CORREA';
 $limimonths = 2000;
- $jobs = [
- [
-'title' => 'PHP DEVELOPER',
-'description' => 'Vamos ahi!!!!!!!',
-'ver' => true,
-'meses' => 25
- ],
- [
-'title' => 'PYTHON',
-'description' => 'ahora!!!!!!',
-'ver' => true,
-'meses' => 14
- ],
- [
-'title' => 'DEVOPS',
-'description'=> 'hola',
-'ver' => true,
-'meses' => 24
- ],
- [
-'title' => 'FARMACIA',
-'description'=> 'AUXILIAR',
-'ver' => true,
-'meses' => 3
- ],
- [
-'title' => 'MEDICITY',
-'description'=> 'ADMINISTRADOR',
-'ver' => true,
-'meses' => 101
- ] 
-
-];
 
 function duracion($meses){
   $años = floor($meses  / 12);
